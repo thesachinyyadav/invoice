@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice | Website Build for Kalai</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            font-family: "Poppins", "Segoe UI", Arial, sans-serif;
+            background: #e9eef5;
+            padding: 26px;
+            color: #0f172a;
+        }
+
+        .wrapper {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        .invoice {
+            background: #ffffff;
+            border-radius: 14px;
+            border: 1px solid #d7deeb;
+            box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+            overflow: hidden;
+        }
+
+        .invoice-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 24px 28px;
+            border-bottom: 1px solid #e3e8f4;
+            background: linear-gradient(180deg, #f8fafc, #ffffff 40%);
+        }
+
+        .header-copy {
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .header-eyebrow {
+            font-size: 11px;
+            letter-spacing: 0.32em;
+            text-transform: uppercase;
+            color: #64748b;
+        }
+
+        .invoice-header h1 {
+            margin: 0;
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 0.6px;
+            color: #0f172a;
+        }
+
+        .logo-stack {
+            display: flex;
+            gap: 16px;
+            align-items: center;
+        }
+
+        .logo-stack img {
+            max-height: 48px;
+        }
+
+        .section {
+            padding: 26px;
+        }
+
+        .meta-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .pill {
+            padding: 12px 16px;
+            border-radius: 12px;
+            border: 1px solid #dfe6f3;
+            background: linear-gradient(180deg, #f9fbfe, #ffffff 70%);
+        }
+
+        .pill-label {
+            font-size: 11px;
+            letter-spacing: 0.26em;
+            color: #64748b;
+            text-transform: uppercase;
+            margin-bottom: 6px;
+        }
+
+        .pill-value {
+            font-size: 14px;
+            font-weight: 500;
+            color: #111827;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 28px;
+            overflow: hidden;
+            border-radius: 14px;
+            border: 1px solid #e1e6f0;
+        }
+
+        thead {
+            background: #0f172a;
+            color: #ffffff;
+            font-size: 12px;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+        }
+
+        th {
+            padding: 14px 16px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 14px 16px;
+            font-size: 14px;
+            border-bottom: 1px solid #e5e7eb;
+            color: #111827;
+        }
+
+        tbody tr:nth-child(even) {
+            background: #f5f8fd;
+        }
+
+        .pricing-panel {
+            display: grid;
+            gap: 10px;
+            max-width: 320px;
+            margin-left: auto;
+        }
+
+        .pricing-heading {
+            font-size: 12px;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: #64748b;
+            margin-bottom: 6px;
+        }
+
+        .pricing-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 14px;
+            border-radius: 12px;
+            background: linear-gradient(120deg, #f1f5f9, #f8fafc);
+            border: 1px solid #e2e8f0;
+        }
+
+        .pricing-row strong {
+            font-size: 15px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+
+        .pricing-row.highlight {
+            background: linear-gradient(120deg, #e8ecff, #f1f4ff);
+            border-color: #c3cdf8;
+        }
+
+        .payment-callout {
+            margin-top: 32px;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) auto;
+            gap: 24px;
+            align-items: center;
+            padding: 22px;
+            border-radius: 14px;
+            border: 1px solid #d2dbf5;
+            background: linear-gradient(135deg, rgba(226, 232, 255, 0.6), rgba(255, 255, 255, 0.95));
+        }
+
+        .payment-copy h2 {
+            margin: 0 0 6px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+
+        .payment-copy p {
+            margin: 4px 0;
+            color: #475569;
+            font-size: 12px;
+        }
+
+        .qr-wrapper {
+            display: inline-flex;
+            padding: 12px;
+            border-radius: 12px;
+            background: #ffffff;
+            border: 1px solid #dbe3f7;
+            box-shadow: 0 12px 24px rgba(59, 130, 246, 0.12);
+            justify-content: center;
+            align-items: center;
+        }
+
+        .qr-wrapper img {
+            width: 132px;
+            height: 132px;
+            object-fit: contain;
+        }
+
+        .note-block {
+            margin-top: 28px;
+            padding: 18px 22px;
+            border-radius: 14px;
+            background: #fff4e5;
+            border: 1px solid #ffd6a5;
+            color: #8c4a0b;
+            font-size: 13px;
+        }
+
+        .note-block strong {
+            letter-spacing: 0.18em;
+            font-size: 10px;
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        .footer {
+            padding: 16px 26px 24px;
+            background: #f8fafc;
+            border-top: 1px solid #e3e8f4;
+            font-size: 11px;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: #94a3b8;
+            text-align: right;
+        }
+
+        @media (max-width: 720px) {
+            body {
+                padding: 20px;
+            }
+
+            .invoice-header {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 16px;
+            }
+
+            .header-copy {
+                gap: 4px;
+            }
+
+            .logo-stack {
+                gap: 12px;
+            }
+
+            .logo-stack img {
+                max-height: 44px;
+            }
+
+            .payment-callout {
+                padding: 28px;
+            }
+
+        }
+
+        @media print {
+            @page {
+                size: A4;
+                margin: 12mm;
+            }
+
+            body {
+                background: #ffffff;
+                padding: 0;
+                color: #0f172a;
+            }
+
+            .wrapper {
+                max-width: none;
+                margin: 0;
+            }
+
+            .invoice {
+                box-shadow: none;
+                border-radius: 0;
+                border: none;
+            }
+
+            .invoice-header,
+            .section {
+                padding: 20px 24px;
+            }
+
+            .invoice-header h1 {
+                font-size: 22px;
+            }
+
+            .meta-grid {
+                gap: 14px;
+                margin-bottom: 24px;
+            }
+
+            .pill {
+                padding: 10px 12px;
+            }
+
+            .pill-value {
+                font-size: 13px;
+            }
+
+            th {
+                padding: 10px 12px;
+                font-size: 10px;
+            }
+
+            td {
+                padding: 10px 12px;
+                font-size: 12px;
+            }
+
+            .pricing-panel {
+                max-width: 280px;
+                gap: 8px;
+            }
+
+            .pricing-row {
+                padding: 8px 12px;
+            }
+
+            .pricing-row strong {
+                font-size: 13px;
+            }
+
+            .payment-callout {
+                margin-top: 20px;
+                padding: 18px;
+                gap: 16px;
+                grid-template-columns: minmax(0, 1fr) auto;
+            }
+
+            .payment-copy h2 {
+                font-size: 15px;
+            }
+
+            .payment-copy p {
+                font-size: 11px;
+            }
+
+            .qr-wrapper {
+                padding: 8px;
+                box-shadow: none;
+            }
+
+            .qr-wrapper img {
+                width: 115px;
+                height: 115px;
+            }
+
+            .note-block {
+                margin-top: 20px;
+                padding: 14px 18px;
+                font-size: 11px;
+            }
+
+            .note-block strong {
+                font-size: 8px;
+            }
+
+            .footer {
+                padding: 14px 20px 18px;
+                font-size: 9px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <main class="invoice">
+            <header class="invoice-header">
+                <div class="header-copy">
+                    <span class="header-eyebrow">Website Development Invoice</span>
+                    <h1>Invoice</h1>
+                </div>
+                <div class="logo-stack">
+                    <img src="socio.svg" alt="Socio logo">
+                    <img src="withsocio.png" alt="With Socio logo">
+                </div>
+            </header>
+
+            <section class="section">
+                <div class="meta-grid">
+                    <div class="pill">
+                        <div class="pill-label">Bill Number</div>
+                        <div class="pill-value">IND-051</div>
+                    </div>
+                    <div class="pill">
+                        <div class="pill-label">Bill To</div>
+                        <div class="pill-value">Kalai</div>
+                    </div>
+                    <div class="pill">
+                        <div class="pill-label">Project</div>
+                        <div class="pill-value">Website Build</div>
+                    </div>
+                    <div class="pill">
+                        <div class="pill-label">Invoice Date</div>
+                        <div class="pill-value">January 12, 2026</div>
+                    </div>
+                    <div class="pill">
+                        <div class="pill-label">Payment Due</div>
+                        <div class="pill-value">Advance only (20%)</div>
+                    </div>
+                </div>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Description</th>
+                            <th>Qty</th>
+                            <th>Rate</th>
+                            <th>Amount</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Custom website development and production engagement</td>
+                            <td>1</td>
+                            <td>₹25,350</td>
+                            <td>₹25,350</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="pricing-panel">
+                    <div class="pricing-heading">Totals</div>
+                    <div class="pricing-row">
+                        <span>Project Total</span>
+                        <strong>₹25,350</strong>
+                    </div>
+                    <div class="pricing-row highlight">
+                        <span>Advance Due Now (20%)</span>
+                        <strong>₹5,070</strong>
+                    </div>
+                    <div class="pricing-row">
+                        <span>Balance Payable Later</span>
+                        <strong>₹20,280</strong>
+                    </div>
+                </div>
+
+                <section class="payment-callout">
+                    <div class="payment-copy">
+                        <h2>Secure Your Project with the Advance</h2>
+                        <p>Scan the QR code to pay ₹5,070 and lock in the website build engagement.</p>
+                        <p>The remaining ₹20,280 will be invoiced against the agreed project milestones.</p>
+                    </div>
+                    <div class="qr-wrapper">
+                        <img src="qr5070.png" alt="QR code for ₹5,070 advance payment">
+                    </div>
+                </section>
+
+                <aside class="note-block">
+                    <strong>IMPORTANT</strong>
+                    <p>The scope covers website development and production only. Shopify subscriptions, domain registration, and storage fees are not included and will be billed separately if required.</p>
+                </aside>
+            </section>
+            <footer class="footer">Prepared by Socio • Queries: withsocio@gmail.com • E-generated invoice, signature not required</footer>
+        </main>
+    </div>
+</body>
+</html>
