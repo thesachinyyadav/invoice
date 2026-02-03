@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Invoice | Short-Form Video Content for Ikram</title>
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap");
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: "Poppins", "Segoe UI", Arial, sans-serif; background: #e9eef5; padding: 10px; color: #0f172a; }
+        .wrapper { max-width: 700px; margin: 0 auto; }
+        .invoice { background: #ffffff; border-radius: 14px; border: 1px solid #d7deeb; box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08); overflow: hidden; }
+        .invoice-header { display: flex; justify-content: space-between; align-items: center; padding: 12px 14px; border-bottom: 1px solid #e3e8f4; background: linear-gradient(180deg, #f8fafc, #ffffff 40%); }
+        .header-copy { display: flex; flex-direction: column; gap: 2px; }
+        .header-eyebrow { font-size: 11px; letter-spacing: 0.32em; text-transform: uppercase; color: #64748b; }
+        .invoice-header h1 { margin: 0; font-size: 18px; font-weight: 600; letter-spacing: 0.6px; color: #0f172a; }
+        .logo-stack { display: flex; gap: 16px; align-items: center; }
+        .logo-stack img { max-height: 32px; }
+        .section { padding: 8px 8px; }
+        .meta-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 6px; margin-bottom: 6px; }
+        .pill { padding: 4px 6px; border-radius: 8px; border: 1px solid #dfe6f3; background: linear-gradient(180deg, #f9fbfe, #ffffff 70%); }
+        .pill-label { font-size: 9px; letter-spacing: 0.18em; color: #64748b; text-transform: uppercase; margin-bottom: 2px; }
+        .pill-value { font-size: 12px; font-weight: 500; color: #111827; }
+        table { width: 100%; border-collapse: collapse; margin-bottom: 6px; overflow: hidden; border-radius: 8px; border: 1px solid #e1e6f0; }
+        thead { background: #0f172a; color: #ffffff; font-size: 12px; letter-spacing: 0.18em; text-transform: uppercase; }
+        th { padding: 4px 6px; text-align: left; font-weight: 600; font-size: 11px; }
+        td { padding: 4px 6px; font-size: 12px; border-bottom: 1px solid #e5e7eb; color: #111827; }
+        tbody tr:nth-child(even) { background: #f5f8fd; }
+        .pricing-panel { display: grid; gap: 3px; max-width: 200px; margin-left: auto; }
+        .pricing-heading { font-size: 10px; letter-spacing: 0.15em; text-transform: uppercase; color: #64748b; margin-bottom: 2px; }
+        .pricing-row { display: flex; justify-content: space-between; align-items: center; padding: 5px 8px; border-radius: 8px; background: linear-gradient(120deg, #f1f5f9, #f8fafc); border: 1px solid #e2e8f0; }
+        .pricing-row strong { font-size: 12px; font-weight: 600; color: #0f172a; }
+        .pricing-row.highlight { background: linear-gradient(120deg, #e8ecff, #f1f4ff); border-color: #c3cdf8; }
+        .payment-callout { margin-top: 8px; display: grid; grid-template-columns: minmax(0, 1fr) auto; gap: 6px; align-items: center; padding: 6px; border-radius: 8px; border: 1px solid #d2dbf5; background: linear-gradient(135deg, rgba(226, 232, 255, 0.6), rgba(255, 255, 255, 0.95)); }
+        .payment-copy h2 { margin: 0 0 2px; font-size: 13px; font-weight: 600; color: #1e293b; }
+        .payment-copy p { margin: 2px 0; color: #475569; font-size: 10px; }
+        .qr-wrapper img { width: 60px; height: 60px; }
+        .note-block { margin-top: 6px; padding: 5px 6px; border-radius: 6px; background: #fff4e5; border: 1px solid #ffd6a5; color: #8c4a0b; font-size: 10px; }
+        .footer { padding: 4px 8px 6px; background: #f8fafc; border-top: 1px solid #e3e8f4; font-size: 8px; letter-spacing: 0.12em; text-transform: uppercase; color: #94a3b8; text-align: right; }
+    </style>
+</head>
+<body>
+<div class="wrapper">
+<main class="invoice">
+
+<header class="invoice-header">
+    <div class="header-copy">
+        <span class="header-eyebrow">Short-Form Video Content Invoice</span>
+        <h1>Invoice</h1>
+    </div>
+    <div class="logo-stack">
+        <img src="socio.svg">
+        <img src="withsocio.png">
+    </div>
+</header>
+
+<section class="section">
+<div class="meta-grid">
+    <div class="pill"><div class="pill-label">Bill Number</div><div class="pill-value">IND-061</div></div>
+    <div class="pill"><div class="pill-label">Bill To</div><div class="pill-value">IKRAM</div></div>
+    <div class="pill"><div class="pill-label">Project</div><div class="pill-value">32 Short-Form Reels (Personal Portfolio)</div></div>
+    <div class="pill"><div class="pill-label">Invoice Date</div><div class="pill-value">January 21, 2026</div></div>
+    <div class="pill"><div class="pill-label">Payment Terms</div><div class="pill-value">Payment (₹25,632)</div></div>
+</div>
+
+<table>
+<thead>
+<tr><th>Description</th><th>Qty</th><th>Rate</th><th>Amount</th></tr>
+</thead>
+<tbody>
+<tr>
+<td>Personal Portfolio Short-Form Video Content Creation (32 Reels)</td>
+<td>32</td>
+<td>₹801</td>
+<td>₹25,630</td>
+</tr>
+</tbody>
+</table>
+
+<div class="pricing-panel">
+<div class="pricing-heading">Totals</div>
+<div class="pricing-row"><span>Project Total</span><strong>₹25,630</strong></div>
+<div class="pricing-row highlight"><span>Payment Due</span><strong>₹25,630</strong></div>
+</div>
+
+<section class="payment-callout">
+<div class="payment-copy">
+<h2>Complete Your Payment</h2>
+<p>Scan the QR code to pay ₹25,630 to confirm the project.</p>
+</div>
+<div class="qr-wrapper">
+<img src="qr25630.jpg">
+</div>
+</section>
+
+<aside class="note-block">
+<strong>SCOPE & TERMS</strong>
+<p>
+This project is for **personal portfolio development**.  
+We will create 32 professionally edited short-form reels focused on personal branding and online presence.
+<br><br>
+<b>Deliverables:</b> 32 edited reels, high-resolution, ready to publish.  
+<b>Terms:</b> Includes shooting and post-production. Extra revisions beyond scope may be charged.
+</p>
+</aside>
+
+</section>
+
+<footer class="footer">
+Prepared by Socio • Queries: withsocio@gmail.com • E-generated invoice
+</footer>
+
+</main>
+</div>
+</body>
+</html>
